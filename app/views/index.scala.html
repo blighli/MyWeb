@@ -1,7 +1,10 @@
 @(message: String)
 
 @main("Welcome to Play") {
-
-    @play20.welcome(message, style = "Java")
-
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <p>
+            <input type="submit">
+        </p>
+    </form>
 }
