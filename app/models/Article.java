@@ -1,5 +1,6 @@
 package models;
 
+import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
 import javax.persistence.Entity;
@@ -15,6 +16,8 @@ public class Article extends Model {
 
     @Id
     public Long id;
+
+    @Constraints.Required
     public String title;
     public String content;
 }

@@ -27,6 +27,10 @@ public class Articles extends Controller {
 
     public static Result save() {
         Form<Article> form = Form.form(Article.class).bindFromRequest();
+        if(form.hasErrors()){
+            flash("error", "输入错误，请改正后提交");
+            return badRequest(articleEdit.render(form));
+        }
         Article article = form.get();
         article.save();
         return redirect(routes.Articles.list());
