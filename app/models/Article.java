@@ -10,6 +10,9 @@ import javax.persistence.Id;
  */
 @Entity
 public class Article extends Model {
+
+    public static Finder<Long, Article>find = new Finder<>(Long.class, Article.class);
+
     @Id
     public Long id;
     public String title;

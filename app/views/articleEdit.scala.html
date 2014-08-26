@@ -1,0 +1,12 @@
+@(form: play.data.Form[Article])
+@import helper.twitterBootstrap._
+@main("编辑文章") {
+    <h1>编辑文章</h1>
+    @helper.form(action = routes.Articles.save()){
+        <fieldset>
+        @helper.inputText(form("title"),'_label -> "标题")
+        @helper.textarea(form("content"),'_label -> "内容")
+        </fieldset>
+        <input type="submit" class="btnbtn-primary">
+    }
+}
